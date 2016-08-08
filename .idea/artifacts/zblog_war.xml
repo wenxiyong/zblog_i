@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zblog:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="zblog.war">
+      <element id="artifact" artifact-name="zblog:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="IKAnalyzer2012FF_u1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

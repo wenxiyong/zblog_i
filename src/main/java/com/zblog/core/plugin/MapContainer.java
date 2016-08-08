@@ -67,7 +67,16 @@ public class MapContainer extends LinkedHashMap<String, Object>{
 
     return result;
   }
+  public List  putIfAbsent(String key, List value){
+    List result = value;
+    if(containsKey(key)){
+      result = get(key);
+    }else{
+      put(key, value);
+    }
 
+    return result;
+  }
   /**
    * 将指定对象中的所有Map实现MapContainer化，使用时注意返回值
    * 

@@ -32,7 +32,9 @@ public class FreeMarkerUtils{
       config.setLocale(Constants.LOCALE_CHINA);
       URL uri = FreeMarkerUtils.class.getResource("ftl");
       config.setDirectoryForTemplateLoading(new File(uri.toURI()));
+//      config.setClassForTemplateLoading(FreeMarkerUtils.class,"ftl");
     }catch(Exception e){
+      logger.error("hello===========");
       throw new ExceptionInInitializerError(e);
     }
   }

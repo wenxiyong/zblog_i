@@ -60,7 +60,7 @@ public class StaticTemplate{
     map.put("pages", postManager.listPageAsTree());
 
     FreeMarkerUtils.doProcessTemplate("/header.html", new File(WebConstants.APPLICATION_PATH, WebConstants.PREFIX
-        + "/common/header.html"), map);
+        + "/common/frontHeader.html"), map);
 
     logger.info("staticHeader");
   }
@@ -81,7 +81,7 @@ public class StaticTemplate{
     }
 
     FreeMarkerUtils.doProcessTemplate("/tagcloud.html", new File(WebConstants.APPLICATION_PATH, WebConstants.PREFIX
-        + "/common/tagcloud.html"), map);
+        + "/common/fontTagcloud.html"), map);
     logger.info("staticCloudTags");
   }
 
@@ -94,7 +94,7 @@ public class StaticTemplate{
     map.put("domain", WebConstants.getDomain());
 
     FreeMarkerUtils.doProcessTemplate("/archive.html", new File(WebConstants.APPLICATION_PATH, WebConstants.PREFIX
-        + "/common/archive.html"), map);
+        + "/common/fontArchive.html"), map);
 
     logger.info("staticArchive");
   }
@@ -107,7 +107,7 @@ public class StaticTemplate{
     map.put("links", linksService.list());
 
     FreeMarkerUtils.doProcessTemplate("/link.html", new File(WebConstants.APPLICATION_PATH, WebConstants.PREFIX
-        + "/common/link.html"), map);
+        + "/common/fontLink.html"), map);
     logger.info("staticLinks");
   }
 
@@ -134,7 +134,7 @@ public class StaticTemplate{
       MapContainer param = new MapContainer("domain", WebConstants.getDomain());
       param.put("posts", postManager.listRecent(10, PostConstants.POST_CREATOR_ALL));
       FreeMarkerUtils.doProcessTemplate("/recent.html", new File(WebConstants.APPLICATION_PATH, WebConstants.PREFIX
-          + "/common/recent.html"), param);
+          + "/common/fontRecent.html"), param);
       logger.info("staticRecent");
 
       staticCloudTags();

@@ -6,7 +6,7 @@
    <jsp:include page="common/head.jsp" flush="false" />
  </head>
  <body>
-   <%@include file="common/header.html" %>
+   <%@include file="common/frontHeader.html" %>
    <div id="content" class="clearfix">
      <div id="left_col" class="clearfix">
        <div class="post_wrap clearfix">
@@ -37,10 +37,10 @@
            </form>
          </div>
        </div>
-       <%@include file="common/recent.html" %>
-       <%@include file="common/tagcloud.html" %>
-       <%@include file="common/archive.html" %>
-       <%@include file="common/link.html" %>
+       <%@include file="common/fontRecent.html" %>
+       <%@include file="common/fontTagcloud.html" %>
+       <%@include file="common/fontArchive.html" %>
+       <%@include file="common/fontLink.html" %>
      </div>
      <jsp:include page="common/footer.jsp" flush="false" />
    </div>

@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Date;
 
+import com.zblog.core.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.stereotype.Component;
@@ -81,7 +82,14 @@ public class Ueditor{
     MultipartFile file = reader.getFile("upfile");
     Upload upload = null;
     try(InputStream in = file.getInputStream()){
-      upload = uploadManager.insertUpload(new InputStreamResource(in), new Date(), file.getOriginalFilename(),
+        String fileName = file.getOriginalFilename();
+        if(!StringUtils.isBlank(fileName)) {
+            String suffixes = fileName.substring(fileName.lastIndexOf("."),fileName.length());
+            fileName = System.currentTimeMillis() + suffixes;
+        }
+      String[] fileNameArray = fileName.split(".");
+
+      upload = uploadManager.insertUpload(new InputStreamResource(in), new Date(), fileName,
           WebContextFactory.get().getUser().getId());
     }catch(Exception e){
       e.printStackTrace();

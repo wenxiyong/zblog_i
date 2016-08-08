@@ -36,8 +36,6 @@ public class ApplicationContextUtil implements ApplicationContextAware{
   /**
    * 根据提供的指定类型的类得到相应的类
    * 
-   * @param servName
-   *          bean名称
    */
   public static <T> T getBean(Class<T> clazz){
     return context.getBean(clazz);

@@ -23,7 +23,7 @@ public class WebConstants{
   }
 
   /**
-   * 设置当前站点域名，因为{@link getDomain()}
+   * 设置当前站点域名，
    * 为ThreadLocal方式实现获取domain,这样不在servlet线程中执行时会拿到null值
    * 
    * @param domain

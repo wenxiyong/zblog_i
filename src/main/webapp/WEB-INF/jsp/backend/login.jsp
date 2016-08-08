@@ -15,6 +15,7 @@
      </div>
      <form id="loginform" method="post">
        <input type="hidden" name="CSRFToken" value="${CSRFToken}" />
+         <input type="hidden" name="guard" value="no">
        <div class="form-group">
          <div class="input-group">
            <div class="input-group-addon"><i class="icon-user"></i></div>
