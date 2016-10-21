@@ -10,3 +10,8 @@ target/
 .project
 .classpath
 .tern-project
+
+#idea ignore
+.idea
+/out/
+*.iml
