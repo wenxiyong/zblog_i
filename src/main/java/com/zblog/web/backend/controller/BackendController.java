@@ -48,7 +48,7 @@ public class BackendController{
   @Autowired
   private UploadService uploadService;
 
-  @RequiresRoles(value = { "admin", "editor" }, logical = Logical.OR)
+  @RequiresRoles(value = { "admin", "editor","contributor"  }, logical = Logical.OR)
   @RequestMapping(value = "/index", method = RequestMethod.GET)
   public String index(Model model){
     model.addAttribute("osInfo", OSInfo.getCurrentOSInfo());

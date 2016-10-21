@@ -29,7 +29,7 @@ $(function(){
     case "url":
       return url.test(value);
     case "content":
-      /* 评论中需包含中文，escape对字符串进行编码时，字符值大于255(非英文字符)的以"%u****"格式存储 */
+      /* 评论中需串进行编码时，字符值大于255(非英文字符)的以"%u****"格式存储 */
       return escape(value).indexOf("%u")>-1;
     }
     

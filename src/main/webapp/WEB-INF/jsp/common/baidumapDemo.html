@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>百度地图API使用Demo</title>
+    <!--本地使用可以下载jquery到本地，然后引用本地文件，下面是直接在线引用-->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        function getMapData() {
+            $.ajax({
+                type: "GET",
+                url: "http://api.map.baidu.com/place/v2/detail?uid=5a8fb739999a70a54207c130&output=json&scope=2&ak=GjsHVvmy037qhKSRu0qSOBkPFwiknx5v",
+                dataType: "jsonp",
+                success: function(data){
+//                    var dataStr = JSON.stringify(data);
+                    $("#data").val(dataStr);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<p>
+    <input type="button" value="点击获取" onclick="getMapData()">
+</p>
+<div>
+    <textarea cols="10" rows="10" id="data"></textarea>
+</div>
+</body>
+</html>
